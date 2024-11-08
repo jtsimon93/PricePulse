@@ -24,15 +24,6 @@ public class ConsumerPriceIndexSeries
     public string Item { get; set; }
     
     [Required]
-    public int Year { get; set; }
-    
-    [Required]
-    public int Month { get; set; }
-    
-    [Required]
-    public decimal Value { get; set; }
-    
-    [Required]
     public bool IsSeasonallyAdjusted { get; set; }
     
     [Required]
@@ -49,9 +40,6 @@ public class ConsumerPriceIndexSeries
     
     [Required]
     public string Currency { get; set; } = "USD";
-    
-    [Required]
-    public DateTime DateRetrieved { get; set; }
     
     [Required]
     public string? Description { get; set; }
@@ -73,4 +61,6 @@ public class ConsumerPriceIndexSeries
     
     [Required]
     public bool IsApparelItem { get; set; }
+    
+    public ICollection<ConsumerPriceIndexEntry> ConsumerPriceIndexEntries { get; set; }
 }
