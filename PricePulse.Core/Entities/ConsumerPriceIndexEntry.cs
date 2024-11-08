@@ -8,6 +8,10 @@ public class ConsumerPriceIndexEntry
     [Key]
     public int Id { get; set; }
     
+    [Required]
+    public string SeriesId { get; set; }
+    
+    [Required]
     public int ConsumerPriceIndexSeriesId { get; set; }
     
     [ForeignKey("ConsumerPriceIndexSeriesId")]
