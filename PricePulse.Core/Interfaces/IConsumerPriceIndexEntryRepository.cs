@@ -10,4 +10,5 @@ public interface IConsumerPriceIndexEntryRepository
     Task<IEnumerable<ConsumerPriceIndexEntry>> GetBySeriesIdAndYearAsync(string seriesId, int year);
     Task<IEnumerable<ConsumerPriceIndexEntry>> GetBySeriesIdAndMonthAsync(string seriesId, int month);
     Task<IEnumerable<ConsumerPriceIndexEntry>> GetBySeriesIdAndYearAndMonthAsync(string seriesId, int year, int month);
+    Task<ConsumerPriceIndexEntry?> GetLatestEntryBySeriesIdAsync(string seriesId);
 }

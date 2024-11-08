@@ -62,4 +62,14 @@ public class ConsumerPriceIndexEntryRepository : IConsumerPriceIndexEntryReposit
             .ToListAsync();
     }
     
+    public async Task<ConsumerPriceIndexEntry?> GetLatestEntryBySeriesIdAsync(string seriesId)
+    {
+        return await _dbContext.ConsumerPriceIndexEntries
+            .AsNoTracking()
+            .Where(entry => entry.SeriesId == seriesId)
+            .OrderByDescending(entry => entry.Year)
+            .ThenByDescending(entry => entry.Month)
+            .FirstOrDefaultAsync();
+    }
+    
 }
